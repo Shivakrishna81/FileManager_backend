@@ -30,12 +30,12 @@ export class AuthService {
       const redirectUri = process.env.REDIRECT_URI;
       const tenantId = process.env.TENANT_ID;
       const clientId = process.env.CLIENT_ID;
-      const clientSecret = process.env.CLIENT_SECRET;
+      // const clientSecret = process.env.CLIENT_SECRET;
       const tokenUrl = `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`;
 
       const tokenResponse = await axios.post(tokenUrl, new URLSearchParams({
         client_id: clientId,
-        client_secret: clientSecret,
+        //client_secret: clientSecret,
         code: code,
         redirect_uri: redirectUri,
         grant_type: 'authorization_code',
@@ -70,7 +70,7 @@ export class AuthService {
   //     const token = await axios.post(`https://login.microsoftonline.com/380a88f6-5447-406c-bebb-2c908f53f0a3/oauth2/v2.0/token` ,
   //       new URLSearchParams({
   //           client_id: "0a8992fa-f124-4b04-a317-06b62cc31e84",
-  //           client_secret: 'Wz98Q~1-DPrkO-hzcmn22ZlsSbqBhwxg~AJ5baSx',
+  //          
   //           redirect_uri: 'http://localhost:3000/runway',
   //           code: code,
    
